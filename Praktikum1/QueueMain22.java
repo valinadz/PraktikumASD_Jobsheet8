@@ -1,6 +1,7 @@
 package Praktikum1;
 
 import java.util.Scanner;
+
 public class QueueMain22 {
     
     public static void menu() {
@@ -9,12 +10,12 @@ public class QueueMain22 {
         System.out.println("2. Dequeue");
         System.out.println("3. Print");
         System.out.println("4. Peek");
-        System.out.println("5. Clear");
+        System.out.println("5. Cek Antrian Paling Belakang");
+        System.out.println("6. Clear");
         System.out.println("------------------");
     }
 
     public static void main(String[] args) {
-        @SuppressWarnings("resource")
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Masukkan kapasitas queue: ");
@@ -36,8 +37,8 @@ public class QueueMain22 {
                     int dataKeluar = Q.Dequeue();
                     if (dataKeluar != 0) {
                         System.out.println("Data yang dikeluarkan: " + dataKeluar);
-                        break;
                     }
+                    break;
                 case 3:
                     Q.print();
                     break;
@@ -45,9 +46,14 @@ public class QueueMain22 {
                     Q.peek();
                     break;
                 case 5:
+                    Q.peekRear();
+                    break;
+                case 6:
                     Q.clear();
                     break;
             }
         } while (pilih == 1 || pilih == 2 || pilih == 3 || pilih == 4 || pilih == 5);
+
+        sc.close();
     }
 }

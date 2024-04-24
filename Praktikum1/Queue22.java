@@ -103,4 +103,12 @@ public class Queue22 {
         }
         return dt;
     }
+
+    public void peekRear() {
+        if (!IsEmpty()) {
+            System.out.println("Elemen paling belakang: " + data[rear]);
+        } else {
+            System.out.println("Queue masih kosong");
+        }
+    }    
 }
